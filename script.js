@@ -33,3 +33,28 @@ fetch("malla.json")
       contenedor.appendChild(div);
     });
   });
+const frases = [
+  "✨ Malla Odonto UNAB 🍃",
+  "🩶 Estudiando con estilo...",
+  "🫠 ¿Dónde está mi café?",
+  "🥹 Cursando la vida",
+  "🍃 ¡Vamos que se puede!",
+];
+
+let i = 0;
+setInterval(() => {
+  document.title = frases[i % frases.length];
+  i++;
+}, 2500);
+function descargarAvance() {
+  const data = {};
+  document.querySelectorAll(".ramo").forEach(ramo => {
+    data[ramo.textContent] = ramo.classList[1]; // estado
+  });
+
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "mi_avance_malla.json";
+  link.click();
+}
