@@ -1,9 +1,13 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f4ec;
+  background-image: url('https://i.ibb.co/ZSkDnPY/ghibli-bg-light.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   color: #3b3b3b;
   margin: 0;
   padding: 1em;
+  backdrop-filter: brightness(0.95);
 }
 
 h1 {
