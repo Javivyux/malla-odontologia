@@ -1,12 +1,12 @@
 [
   [
-    { "nombre": "Bases Morfológicas y Estructurales I"
-    { "nombre": "Biología Celular"
-    { "nombre": "Física Aplicada a la Odontología"
-    { "nombre": "Introducción a la Odontología I"
-    { "nombre": "Habilidades Comunicativas"
-    { "nombre": "Inglés I"
-  ]
+    { "nombre": "Bases Morfológicas y Estructurales I", "requisitos": [] },
+    { "nombre": "Biología Celular", "requisitos": [] },
+    { "nombre": "Física Aplicada a la Odontología", "requisitos": [] },
+    { "nombre": "Introducción a la Odontología I", "requisitos": [] },
+    { "nombre": "Habilidades Comunicativas", "requisitos": [] },
+    { "nombre": "Inglés I", "requisitos": [] }
+  ],
   [
     { "nombre": "Bases Morfológicas y Estructurales II", "requisitos": ["Bases Morfológicas y Estructurales I"] },
     { "nombre": "Genética Molecular Humana", "requisitos": ["Biología Celular"] },
