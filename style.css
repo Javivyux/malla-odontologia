@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f1f7f4; /* Verde menta ultra suave Ghibli vibes */
+  background-color: #f1f7f4; /* Ghibli verde menta suave */
   color: #3b3b3b;
   margin: 0;
   padding: 1em;
@@ -14,7 +14,7 @@ h1 {
 
 #malla {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1em;
   margin-top: 2em;
 }
@@ -32,8 +32,8 @@ h1 {
 }
 
 .ramo {
-  padding: 0.5em;
-  margin: 0.5em 0;
+  padding: 0.6em;
+  margin: 0.4em 0;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease;
