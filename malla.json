@@ -1,0 +1,66 @@
+[
+  [
+    { "nombre": "Bases Morfológicas y Estructurales I" },
+    { "nombre": "Biología Celular" },
+    { "nombre": "Física Aplicada a la Odontología" },
+    { "nombre": "Introducción a la Odontología I" },
+    { "nombre": "Habilidades Comunicativas" },
+    { "nombre": "Inglés I" }
+  ],
+  [
+    { "nombre": "Bases Morfológicas y Estructurales II" },
+    { "nombre": "Genética Molecular Humana" },
+    { "nombre": "Química General e Inorgánica" },
+    { "nombre": "Introducción a la Odontología II" },
+    { "nombre": "Inglés II" }
+  ],
+  [
+    { "nombre": "Fisiología" },
+    { "nombre": "Bioquímica General" },
+    { "nombre": "Microbiología Oral" },
+    { "nombre": "Patología General I" },
+    { "nombre": "Inglés III" }
+  ],
+  [
+    { "nombre": "Bioquímica Oral" },
+    { "nombre": "Patología General II" },
+    { "nombre": "Promoción y Educación en Salud" },
+    { "nombre": "Farmacología" },
+    { "nombre": "Inglés IV" }
+  ],
+  [
+    { "nombre": "Patología Dentomaxilofacial" },
+    { "nombre": "Imagenología Dentomaxilar" },
+    { "nombre": "Cirugía Bucal Básica" },
+    { "nombre": "Fisiología Oral y Oclusión" },
+    { "nombre": "Integrador I: Preclínico Integrado" }
+  ],
+  [
+    { "nombre": "Cariología Clínica" },
+    { "nombre": "Ética y Psicología Orientada a la Práctica Clínica" },
+    { "nombre": "Salud Pública Odontológica" },
+    { "nombre": "Medicina Oral" }
+  ],
+  [
+    { "nombre": "Rehabilitación Oral" },
+    { "nombre": "Cirugía Dentomaxilar" },
+    { "nombre": "Endodoncia" },
+    { "nombre": "Periodoncia" },
+    { "nombre": "Pensamiento Crítico" }
+  ],
+  [
+    { "nombre": "Ortodoncia y Ortopedia Dentomaxilar" },
+    { "nombre": "Odontopediatría" },
+    { "nombre": "Integrador II: Clínica Integral del Adulto y Odontogeriatría" },
+    { "nombre": "Odontología Basada en la Evidencia" },
+    { "nombre": "Administración y Gestión en Odontología" }
+  ],
+  [
+    { "nombre": "Proyecto de Investigación" }
+  ],
+  [
+    { "nombre": "Integrador III: Internado Clínico" }
+  ],
+  [],
+  []
+]
