@@ -1,78 +1,85 @@
-const estados = ["pendiente", "aprobado"];
+const estados = ["pendiente", "cursando", "aprobado"];
 let ramosPorNombre = {};
 
-fetch("malla.json")
-  .then(res => res.json())
-  .then(data => {
-    const contenedor = document.getElementById("malla");
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("malla.json")
+    .then(res => res.json())
+    .then(data => cargarMalla(data))
+    .catch(error => console.error("Error cargando la malla:", error));
+});
 
-    data.forEach((semestre, index) => {
-      const div = document.createElement("div");
-      div.classList.add("semestre");
+function cargarMalla(data) {
+  const contenedor = document.getElementById("malla");
+  contenedor.innerHTML = "";
 
-      const titulo = document.createElement("h2");
-      titulo.textContent = `Semestre ${index + 1}`;
-      div.appendChild(titulo);
+  data.forEach((semestre, index) => {
+    const divSemestre = document.createElement("div");
+    divSemestre.className = "semestre";
 
-      semestre.forEach(ramo => {
-        const divRamo = document.createElement("div");
-        const estadoGuardado = localStorage.getItem(ramo.nombre) || "pendiente";
-        divRamo.classList.add("ramo", estadoGuardado);
-        divRamo.textContent = ramo.nombre;
+    const titulo = document.createElement("h2");
+    titulo.textContent = `Semestre ${index + 1}`;
+    divSemestre.appendChild(titulo);
 
-        divRamo.dataset.nombre = ramo.nombre;
-        divRamo.dataset.estado = estadoGuardado;
-        divRamo.dataset.requisitos = JSON.stringify(ramo.requisitos || []);
-
-        ramosPorNombre[ramo.nombre] = divRamo;
-
-        divRamo.addEventListener("click", () => {
-          toggleEstado(divRamo);
-          actualizarDependientes();
-        });
-
-        div.appendChild(divRamo);
-      });
-
-      contenedor.appendChild(div);
+    semestre.forEach(ramo => {
+      const divRamo = crearElementoRamo(ramo);
+      divSemestre.appendChild(divRamo);
     });
 
-    // Primera vez que se carga todo → actualizar dependientes
+    contenedor.appendChild(divSemestre);
+  });
+
+  actualizarDependientes();
+}
+
+function crearElementoRamo(ramo) {
+  const divRamo = document.createElement("div");
+  const estadoGuardado = localStorage.getItem(ramo.nombre) || "pendiente";
+  
+  divRamo.className = `ramo ${estadoGuardado}`;
+  divRamo.textContent = ramo.nombre;
+  divRamo.dataset.nombre = ramo.nombre;
+  divRamo.dataset.estado = estadoGuardado;
+  divRamo.dataset.requisitos = JSON.stringify(ramo.requisitos || []);
+
+  ramosPorNombre[ramo.nombre] = divRamo;
+
+  divRamo.addEventListener("click", () => {
+    cambiarEstado(divRamo);
     actualizarDependientes();
   });
 
-function toggleEstado(ramoEl) {
-  let estado = ramoEl.dataset.estado;
-  let nuevoEstado = estado === "pendiente" ? "aprobado" : "pendiente";
+  return divRamo;
+}
 
-  ramoEl.classList.remove(estado);
+function cambiarEstado(ramoEl) {
+  const estadoActual = ramoEl.dataset.estado;
+  const nuevoEstado = estados[(estados.indexOf(estadoActual) + 1) % estados.length];
+  
+  ramoEl.classList.remove(estadoActual);
   ramoEl.classList.add(nuevoEstado);
   ramoEl.dataset.estado = nuevoEstado;
   localStorage.setItem(ramoEl.dataset.nombre, nuevoEstado);
 }
 
 function actualizarDependientes() {
-  for (const nombre in ramosPorNombre) {
-    const ramoEl = ramosPorNombre[nombre];
-    const requisitos = JSON.parse(ramoEl.dataset.requisitos || "[]");
+  Object.values(ramosPorNombre).forEach(ramoEl => {
+    if (ramoEl.dataset.estado === "aprobado") return;
 
-    if (ramoEl.dataset.estado === "aprobado") continue;
-
-    let todosAprobados = requisitos.every(req => {
-      const el = ramosPorNombre[req];
-      return el && el.dataset.estado === "aprobado";
+    const requisitos = JSON.parse(ramoEl.dataset.requisitos);
+    const puedeCursar = requisitos.every(req => {
+      const reqEl = ramosPorNombre[req];
+      return reqEl && reqEl.dataset.estado === "aprobado";
     });
 
-    const estadoActual = ramoEl.dataset.estado;
-    const nuevoEstado = todosAprobados ? "cursando" : "pendiente";
-
-    if (estadoActual !== nuevoEstado) {
-      ramoEl.classList.remove(estadoActual);
+    const nuevoEstado = puedeCursar ? "cursando" : "pendiente";
+    
+    if (ramoEl.dataset.estado !== nuevoEstado) {
+      ramoEl.classList.remove(ramoEl.dataset.estado);
       ramoEl.classList.add(nuevoEstado);
       ramoEl.dataset.estado = nuevoEstado;
-      localStorage.setItem(nombre, nuevoEstado);
+      localStorage.setItem(ramoEl.dataset.nombre, nuevoEstado);
     }
-  }
+  });
 }
 
 function descargarAvance() {
@@ -84,11 +91,11 @@ function descargarAvance() {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = "mi_avance_malla.json";
+  link.download = `avance_odontologia_${new Date().toISOString().slice(0,10)}.json`;
   link.click();
 }
 
-// Título animado ✨
+// Animación del título
 const frases = [
   "✨ Malla Odonto UNAB 🍃",
   "🫠 ¿Dónde está mi café?",
