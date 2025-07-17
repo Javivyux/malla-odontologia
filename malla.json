@@ -6,7 +6,8 @@
     { "nombre": "Introducción a la Odontología I", "requisitos": [] },
     { "nombre": "Habilidades Comunicativas", "requisitos": [] },
     { "nombre": "Inglés I", "requisitos": [] }
-  ],
+  ]
+
   [
     { "nombre": "Bases Morfológicas y Estructurales II", "requisitos": ["Bases Morfológicas y Estructurales I"] },
     { "nombre": "Genética Molecular Humana", "requisitos": ["Biología Celular"] },
