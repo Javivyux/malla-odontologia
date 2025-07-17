@@ -1,11 +1,11 @@
 [
   [
-    { "nombre": "Bases Morfológicas y Estructurales I", "requisitos": [] },
-    { "nombre": "Biología Celular", "requisitos": [] },
-    { "nombre": "Física Aplicada a la Odontología", "requisitos": [] },
-    { "nombre": "Introducción a la Odontología I", "requisitos": [] },
-    { "nombre": "Habilidades Comunicativas", "requisitos": [] },
-    { "nombre": "Inglés I", "requisitos": [] }
+    { "nombre": "Bases Morfológicas y Estructurales I"
+    { "nombre": "Biología Celular"
+    { "nombre": "Física Aplicada a la Odontología"
+    { "nombre": "Introducción a la Odontología I"
+    { "nombre": "Habilidades Comunicativas"
+    { "nombre": "Inglés I"
   ],
   [
     { "nombre": "Bases Morfológicas y Estructurales II", "requisitos": ["Bases Morfológicas y Estructurales I"] },
@@ -19,14 +19,16 @@
     { "nombre": "Bioquímica General", "requisitos": ["Biología Celular", "Química General e Inorgánica"] },
     { "nombre": "Microbiología Oral", "requisitos": ["Genética Molecular Humana"] },
     { "nombre": "Patología General I", "requisitos": ["Bases Morfológicas y Estructurales II", "Genética Molecular Humana"] },
-    { "nombre": "Inglés III", "requisitos": ["Inglés II"] }
+    { "nombre": "Inglés III", "requisitos": ["Inglés II"] },
+    { "nombre": "Biomateriales Dentales", "requisitos": ["Bases Morfológicas y Estructurales II", "Química General e Inorgánica", "Introducción a la Odontología II"] }
   ],
   [
     { "nombre": "Bioquímica Oral", "requisitos": ["Bioquímica General"] },
     { "nombre": "Patología General II", "requisitos": ["Fisiología", "Patología General I"] },
     { "nombre": "Promoción y Educación en Salud", "requisitos": ["Introducción a la Odontología II"] },
     { "nombre": "Farmacología", "requisitos": ["Fisiología", "Microbiología Oral"] },
-    { "nombre": "Inglés IV", "requisitos": ["Inglés III"] }
+    { "nombre": "Inglés IV", "requisitos": ["Inglés III"] },
+    { "nombre": "Biomateriales Dentales", "requisitos": ["Bases Morfológicas y Estructurales II", "Química General e Inorgánica", "Introducción a la Odontología II"] }
   ],
   [
     { "nombre": "Patología Dentomaxilofacial", "requisitos": ["Patología General II", "Farmacología"] },
@@ -39,7 +41,12 @@
     { "nombre": "Cariología Clínica", "requisitos": ["Bioquímica Oral", "Patología General II", "Promoción y Educación en Salud"] },
     { "nombre": "Ética y Psicología Orientada a la Práctica Clínica", "requisitos": ["Promoción y Educación en Salud"] },
     { "nombre": "Salud Pública Odontológica", "requisitos": ["Cariología Clínica"] },
-    { "nombre": "Medicina Oral", "requisitos": ["Patología Dentomaxilofacial"] }
+    { "nombre": "Medicina Oral", "requisitos": ["Patología Dentomaxilofacial"] },
+    { "nombre": "Patología Dentomaxilofacial", "requisitos": ["Patología General II", "Farmacología"] },
+    { "nombre": "Imagenología Dentomaxilar", "requisitos": ["Patología General II"] },
+    { "nombre": "Cirugía Bucal Básica", "requisitos": ["Patología General II", "Farmacología"] },
+    { "nombre": "Fisiología Oral y Oclusión", "requisitos": ["Biomateriales Dentales"] },
+    { "nombre": "Integrador I: Preclínico Integrado", "requisitos": ["Biomateriales Dentales", "Promoción y Educación en Salud"] }
   ],
   [
     { "nombre": "Rehabilitación Oral", "requisitos": ["Imagenología Dentomaxilar", "Cirugía Bucal Básica", "Fisiología Oral y Oclusión", "Cariología Clínica", "Integrador I: Preclínico Integrado"] },
@@ -49,18 +56,27 @@
     { "nombre": "Pensamiento Crítico", "requisitos": ["Habilidades Comunicativas"] }
   ],
   [
-    { "nombre": "Ortodoncia y Ortopedia Dentomaxilar", "requisitos": ["Periodoncia"] },
-    { "nombre": "Odontopediatría", "requisitos": ["Ética y Psicología Orientada a la Práctica Clínica", "Rehabilitación Oral", "Cirugía Dentomaxilar", "Endodoncia", "Periodoncia"] },
-    { "nombre": "Integrador II: Clínica Integral del Adulto y Odontogeriatría", "requisitos": ["Ética y Psicología Orientada a la Práctica Clínica", "Rehabilitación Oral", "Endodoncia", "Periodoncia"] },
+    { "nombre": "Rehabilitación Oral", "requisitos": ["Imagenología Dentomaxilar", "Cirugía Bucal Básica", "Fisiología Oral y Oclusión", "Cariología Clínica", "Integrador I: Preclínico Integrado"] },
+    { "nombre": "Cirugía Dentomaxilar", "requisitos": ["Patología Dentomaxilofacial", "Imagenología Dentomaxilar", "Cirugía Bucal Básica"] },
+    { "nombre": "Endodoncia", "requisitos": ["Imagenología Dentomaxilar", "Cirugía Bucal Básica"] },
+    { "nombre": "Periodoncia", "requisitos": ["Imagenología Dentomaxilar", "Cirugía Bucal Básica", "Integrador I: Preclínico Integrado"] },
     { "nombre": "Odontología Basada en la Evidencia", "requisitos": ["Salud Pública Odontológica"] },
     { "nombre": "Administración y Gestión en Odontología", "requisitos": ["Salud Pública Odontológica"] }
+  ],
+  [
+    { "nombre": "Ortodoncia y Ortopedia Dentomaxilar", "requisitos": ["Periodoncia"] },
+    { "nombre": "Odontopediatría", "requisitos": ["Ética y Psicología Orientada a la Práctica Clínica", "Rehabilitación Oral", "Cirugía Dentomaxilar", "Endodoncia", "Periodoncia"] },
+    { "nombre": "Integrador II: Clínica Integral del Adulto y Odontogeriatría", "requisitos": ["Ética y Psicología Orientada a la Práctica Clínica", "Rehabilitación Oral", "Endodoncia", "Periodoncia"] }
+  ],
+  [
+    { "nombre": "Ortodoncia y Ortopedia Dentomaxilar", "requisitos": ["Periodoncia"] },
+    { "nombre": "Odontopediatría", "requisitos": ["Ética y Psicología Orientada a la Práctica Clínica", "Rehabilitación Oral", "Cirugía Dentomaxilar", "Endodoncia", "Periodoncia"] },
+    { "nombre": "Integrador II: Clínica Integral del Adulto y Odontogeriatría", "requisitos": ["Ética y Psicología Orientada a la Práctica Clínica", "Rehabilitación Oral", "Endodoncia", "Periodoncia"] }
   ],
   [
     { "nombre": "Proyecto de Investigación", "requisitos": ["Pensamiento Crítico", "Cirugía y Traumatología Maxilofacial", "Ortodoncia y Ortopedia Dentomaxilar", "Odontopediatría", "Odontología Basada en la Evidencia", "Administración y Gestión en Odontología", "Integrador II: Clínica Integral del Adulto y Odontogeriatría"] }
   ],
   [
     { "nombre": "Integrador III: Internado Clínico", "requisitos": ["Pensamiento Crítico", "Cirugía y Traumatología Maxilofacial", "Ortodoncia y Ortopedia Dentomaxilar", "Odontopediatría", "Odontología Basada en la Evidencia", "Administración y Gestión en Odontología", "Integrador II: Clínica Integral del Adulto y Odontogeriatría"] }
-  ],
-  [],
-  []
+  ]
 ]
