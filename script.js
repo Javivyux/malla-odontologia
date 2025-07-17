@@ -91,7 +91,6 @@ function descargarAvance() {
 // Título animado ✨
 const frases = [
   "✨ Malla Odonto UNAB 🍃",
-  "🩶 Estudiando con estilo...",
   "🫠 ¿Dónde está mi café?",
   "🥹 Cursando la vida",
   "🍃 ¡Vamos que se puede!",
